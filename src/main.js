@@ -376,12 +376,12 @@ render(siteMainElement, createFilterTemplate(), `beforeend`);
 render(siteMainElement, createBoardTemplate(), `beforeend`);
 
 const boardElement = siteMainElement.querySelector(`.board`);
-const tasksList = siteMainElement.querySelector(`.board__tasks`);
+const tasksListElement = siteMainElement.querySelector(`.board__tasks`);
 
-render(tasksList, createTaskAddTemplate(), `beforeend`);
+render(tasksListElement, createTaskAddTemplate(), `beforeend`);
 
 for (let i = 0; i < TASKS_COUNT; i++) {
-  render(tasksList, createTaskTemplate(), `beforeend`);
+  render(tasksListElement, createTaskTemplate(), `beforeend`);
 }
 
 render(boardElement, createLoadButtonTemplate(), `beforeend`);
