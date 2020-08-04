@@ -26,4 +26,4 @@ for (let i = 0; i < TASKS_COUNT; i++) {
   render(tasksListElement, createTaskTemplate(), `beforeend`);
 }
 
-render(boardElement, createLoadButtonTemplate(), `beforeend` );
+render(boardElement, createLoadButtonTemplate(), `beforeend`);
