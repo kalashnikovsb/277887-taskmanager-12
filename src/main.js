@@ -12,7 +12,7 @@ import {generateFilter} from "./mock/filter.js";
 import {render, RenderPosition} from "./utils.js";
 
 const TASK_COUNT = 22;
-const TASK_COUNT_PER_STEP = 8 ;
+const TASK_COUNT_PER_STEP = 8;
 
 const siteMainElement = document.querySelector(`.main`);
 const siteHeaderElement = siteMainElement.querySelector(`.main__control`);
