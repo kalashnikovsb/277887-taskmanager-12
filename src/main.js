@@ -76,7 +76,7 @@ const renderBoard = (boardContainer, boardTasks) => {
 
   boardTasks
     .slice(0, Math.min(tasks.length, TASK_COUNT_PER_STEP))
-    .forEach((boardTask) => renderTask(taskListComponent.getElement(), boardTask));
+    .forEach((boardTask) => renderTask(taskListComponent.getElement(), boardTask)) ;
 
   if (boardTasks.length > TASK_COUNT_PER_STEP) {
     let renderedTaskCount = TASK_COUNT_PER_STEP;
