@@ -16,6 +16,6 @@ const siteHeaderElement = siteMainElement.querySelector(`.main__control`);
 const boardPresenter = new BoardPresenter(siteMainElement);
 
 render(siteHeaderElement, new SiteMenuView(), RenderPosition.BEFOREEND);
-render(siteMainElement, new FilterView(filters), RenderPosition.BEFOREEND);
+render(siteMainElement, new FilterView(filters), RenderPosition.BEFOREEND) ;
 
 boardPresenter.init(tasks);
