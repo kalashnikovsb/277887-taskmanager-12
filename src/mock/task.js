@@ -1,5 +1,5 @@
 import {COLORS} from "../const.js";
-import {getRandomInteger} from "../utils.js";
+import {getRandomInteger} from "../utils/common.js";
 
 const generateDescription = () => {
   const descriptions = [
@@ -7,7 +7,9 @@ const generateDescription = () => {
     `Сделать домашку`,
     `Пройти интенсив на соточку`
   ];
+
   const randomIndex = getRandomInteger(0, descriptions.length - 1);
+
   return descriptions[randomIndex];
 };
 
@@ -18,18 +20,23 @@ const generateDate = () => {
   // Ноль - ложь, один - истина. Для верности приводим
   // к булевому типу с помощью Boolean
   const isDate = Boolean(getRandomInteger(0, 1));
+
   if (!isDate) {
     return null;
   }
+
   const maxDaysGap = 7;
   const daysGap = getRandomInteger(-maxDaysGap, maxDaysGap);
   const currentDate = new Date();
+
   // По заданию дедлайн у задачи устанавливается без учёта времеми,
   // но объект даты без времени завести нельзя,
   // поэтому будем считать срок у всех задач -
   // это 23:59:59 установленной даты
   currentDate.setHours(23, 59, 59, 999);
+
   currentDate.setDate(currentDate.getDate() + daysGap);
+
   return new Date(currentDate);
 };
 
@@ -47,6 +54,7 @@ const generateRepeating = () => {
 
 const getRandomColor = () => {
   const randomIndex = getRandomInteger(0, COLORS.length - 1);
+
   return COLORS[randomIndex];
 };
 
@@ -70,6 +78,6 @@ export const generateTask = () => {
     repeating,
     color: getRandomColor(),
     isArchive: Boolean(getRandomInteger(0, 1)),
-    isFavorite: Boolean(getRandomInteger(0, 1)),
+    isFavorite: Boolean(getRandomInteger(0, 1))
   };
 };
